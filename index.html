@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram рассылка</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stats">
+            <p>Аккаунтов: <span id="totalAccounts">0</span></p>
+            <p>Активных: <span id="activeAccounts">0</span></p>
+            <p>ЛС отправлено: <span id="pmSent">0</span></p>
+            <p>Чатов: <span id="groupSent">0</span></p>
+        </div>
+        
+        <button onclick="showSessionForm()">Новая сессия</button>
+        
+        <div id="sessionForm" class="modal">
+            <div class="modal-content">
+                <input type="text" id="apiId" placeholder="API ID">
+                <input type="text" id="apiHash" placeholder="API HASH">
+                <input type="text" id="phone" placeholder="Номер телефона">
+                <button onclick="sendCode()">Отправить код</button>
+                <input type="text" id="code" placeholder="Код из Telegram" style="display: none;">
+                <button onclick="confirmCode()" style="display: none;">Подтвердить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
